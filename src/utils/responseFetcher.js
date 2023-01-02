@@ -71,9 +71,6 @@ const Action = props => {
 				case "CODE":
 					document.location.href = "/vscode";
 					break;
-				case "DANGER":
-					document.location.href = "/danger-zone";
-					break;
 				case "QEMU":
 					document.location.href = "/qemu";
 					break;

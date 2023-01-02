@@ -87,7 +87,7 @@ let commandList = [
 		name: ["github"],
 		action: true,
 		response:
-			'Visit: <a href="https://github.com/PeralStudio/">Alberto</a>',
+			'Visit: <a href="https://github.com/PeralStudio/" target="_blank">Alberto</a>',
 		subPathStrict: [false],
 		description: "checkout my github profile",
 	},
@@ -95,7 +95,7 @@ let commandList = [
 		name: ["linkedin"],
 		action: true,
 		response:
-			'Visit: <a href="https://www.linkedin.com/in/alberto-peral/">LinkedIn</a>',
+			'Visit: <a href="https://www.linkedin.com/in/alberto-peral/" target="_blank">LinkedIn</a>',
 		subPathStrict: [false],
 		description: "checkout my LinkedIn profile",
 	},
