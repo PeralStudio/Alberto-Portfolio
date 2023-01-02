@@ -4,12 +4,11 @@ import "@styles/dock.scss";
 import FinderIcon from "@static/finder.png";
 import CodeIcon from "@static/code.png";
 import GithubIcon from "@static/github.png";
-import twitterIcon from "@static/twitterIcon.png";
+// import twitterIcon from "@static/twitterIcon.png";
 import FolderIcon from "@static/folder.png";
 import LinkedInIcon from "@static/LinkedInIcon.png";
-import ruidoblanco from "@static/ruidoblanco.jpg";
+// import ruidoblanco from "@static/ruidoblanco.jpg";
 import { Link } from "react-router-dom";
-import DevopsIcon from "@static/DevopsIcon.png";
 import lol from "@static/lol.png";
 // import MyResume from "../Resume/resume/MyResume.pdf"
 
@@ -84,25 +83,13 @@ const DockContent = () => {
 									/>
 								</li>
 							</a>
-							<a
+							{/* <a
 								href="https://play.google.com/store/apps/details?id=com.alfanjorfresco.ruidoblancobebe"
 								target="_blank"
 							>
 								<li data-title="Ruido Blanco Bebé App">
 									<img
 										src={ruidoblanco}
-										className="img-fluid"
-										alt="mac"
-									/>
-								</li>
-							</a>
-							{/* <a
-								href="https://github.com/PeralStudio/"
-								target="_blank"
-							>
-								<li data-title="My DevOps Portal">
-									<img
-										src={DevopsIcon}
 										className="img-fluid"
 										alt="mac"
 									/>

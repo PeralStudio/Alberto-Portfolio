@@ -1,14 +1,15 @@
+import { useState } from "react";
 import "@styles/menubar.scss";
 import AppleIcon from "@static/apple.png";
 import BatteryIcon from "@static/battery.png";
 import WifiIcon from "@static/wifi.png";
 import ControlCenterIcon from "@static/controlcenter.png";
 import NotifyIcon from "@static/NotifyIcon.png";
-import IcloudIcon from "@static/IcloudIcon.png";
+// import IcloudIcon from "@static/IcloudIcon.png";
 
-const formatMinutes = min => {
-	return min < 10 ? "0" + min : min;
-};
+// const formatMinutes = min => {
+// 	return min < 10 ? "0" + min : min;
+// };
 
 const convertToReadableDate = timestamp => {
 	const shortenedDaysOfTheWeek = [
@@ -39,15 +40,33 @@ const convertToReadableDate = timestamp => {
 		<>
 			{shortenedDaysOfTheWeek[currentDate.getDay()]}{" "}
 			{currentDate.getDate()} {shortenedMonth[currentDate.getMonth()]}{" "}
-			<span className="time">
+			{/* <span className="time">
 				{currentDate.getHours()}:
 				{formatMinutes(currentDate.getMinutes())}
-			</span>
+			</span> */}
 		</>
 	);
 };
 
 const MenuContent = props => {
+	const [hour, setHour] = useState("");
+
+	const getHour = () => {
+		const date = new Date();
+		let hours = date.getHours();
+		let minutes = date.getMinutes();
+		let seconds = date.getSeconds();
+
+		// Añadir un cero a la izquierda a las horas, minutos y segundos si son menores que 10
+		hours = hours < 10 ? "0" + hours : hours;
+		minutes = minutes < 10 ? "0" + minutes : minutes;
+		seconds = seconds < 10 ? "0" + seconds : seconds;
+
+		setHour(hours + ":" + minutes + ":" + seconds);
+	};
+
+	setInterval(getHour, 1000);
+
 	const menuItems = [
 		[
 			<img src={AppleIcon} alt="Apple logo" className="apple" />,
@@ -70,6 +89,9 @@ const MenuContent = props => {
 			/>,
 			<img src={NotifyIcon} alt="Notify icon" className="right-icon" />,
 			convertToReadableDate(Date.now()),
+			<p className="right-icon" style={{ minWidth: "60px" }}>
+				{hour}
+			</p>,
 		],
 	];
 	return (

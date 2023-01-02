@@ -100,11 +100,13 @@ const InputLine = props => {
 	const { commands, setCommand, path } = useContext(DataContext);
 	const [counter, setCounter] = useState(commands.length);
 	const [typing, setTyping] = useState(false);
+	const [hour, setHour] = useState("");
 	// eslint-disable-next-line
 	const [disabled, setDisabled] = useState(false);
 	const inputRef = useRef();
 	const cursorRef = useRef();
 	let alertHidden = localStorage.getItem("hideHelp");
+
 	useEffect(() => {
 		if (!disabled) {
 			inputRef.current.focus();
@@ -116,6 +118,7 @@ const InputLine = props => {
 			});
 		}
 		//eslint-disable-next-line
+		getHour();
 	}, []);
 
 	useEffect(() => {
@@ -137,16 +140,31 @@ const InputLine = props => {
 		//eslint-disable-next-line
 	}, [disabled, alertHidden]);
 
+	const getHour = () => {
+		const date = new Date();
+		let hours = date.getHours();
+		let minutes = date.getMinutes();
+		let seconds = date.getSeconds();
+
+		// Añadir un cero a la izquierda a las horas, minutos y segundos si son menores que 10
+		hours = hours < 10 ? "0" + hours : hours;
+		minutes = minutes < 10 ? "0" + minutes : minutes;
+		seconds = seconds < 10 ? "0" + seconds : seconds;
+
+		setHour(hours + ":" + minutes + ":" + seconds);
+	};
+
 	useEffect(() => {
 		const timeoutId = setTimeout(() => setTyping(false), 200);
 		return () => clearTimeout(timeoutId);
 	}, [typing]);
+
 	return (
 		<InputContainer>
 			<Label
 				htmlFor="input"
 				dangerouslySetInnerHTML={{
-					__html: sanitize(path),
+					__html: sanitize(`🕑${hour} 📁${path}`),
 				}}
 			/>
 			<Input

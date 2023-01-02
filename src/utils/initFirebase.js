@@ -13,6 +13,7 @@ const config = {
 const initFirebase = () => {
 	if (!firebase.apps.length) {
 		firebase.initializeApp(config);
+		console.log("iniciado");
 	}
 };
 

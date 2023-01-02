@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import HeadingBar from "@elements/Window/HeadingBar";
 import Draggable from "react-draggable";
-import bg from "../static/bg5small.jpg";
+import bg from "../static/bg5original2.jpg";
 import theme from "../styles/theme";
 import AlertContent from "../elements/Alert/AlertContent";
 import DockContent from "../elements/Dock/DockContent";
@@ -20,7 +20,7 @@ const Wrapper = styled.div`
 `;
 
 const dimensionConstraints = css`
-	width: 75%;
+	width: 65%;
 	min-width: 70%;
 	min-height: 25%;
 	max-height: 90%;
