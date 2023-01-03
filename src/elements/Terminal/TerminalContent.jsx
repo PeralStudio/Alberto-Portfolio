@@ -164,7 +164,7 @@ const InputLine = props => {
 			<Label
 				htmlFor="input"
 				dangerouslySetInnerHTML={{
-					__html: sanitize(`🕑${hour} 📁${path}`),
+					__html: sanitize(`🕑${hour} 📁${path}⠀`),
 				}}
 			/>
 			<Input
@@ -270,7 +270,7 @@ const InputLine = props => {
 							setCommand(val);
 							break;
 						default:
-							// console.log(e.key)
+							// console.log(e.key);
 							break;
 					}
 				}}
