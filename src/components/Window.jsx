@@ -9,7 +9,7 @@ const VSCode = () => {
 	return (
 		<Default
 			contextMenu={true}
-			heading="alberto@portfolio: ⚠️type 'help' for more info⚠️"
+			heading="AlbertoPeral@portfolio: ⚠️type 'help' for more info⚠️"
 			programName="Terminal"
 		>
 			<Suspense fallback={<Loader />}>
