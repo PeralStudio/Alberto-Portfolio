@@ -75,7 +75,7 @@ const DockContent = () => {
 								href="https://lolstatsv2.peralstudio.com/"
 								target="_blank"
 							>
-								<li data-title="League Of Legends Stats">
+								<li data-title="League Of Legends Stats - Personal Proyect">
 									<img
 										src={lol}
 										className="img-fluid"
@@ -96,17 +96,15 @@ const DockContent = () => {
 								</li>
 							</a> */}
 							<div className="separator" />
-							<a>
-								<Link to="/resume">
-									<li data-title="Resume">
-										<img
-											src={FolderIcon}
-											className="img-fluid"
-											alt="mac"
-										/>
-									</li>
-								</Link>
-							</a>
+							<Link to="/resume">
+								<li data-title="Resume">
+									<img
+										src={FolderIcon}
+										className="img-fluid"
+										alt="mac"
+									/>
+								</li>
+							</Link>
 						</ul>
 					</div>
 				</div>
