@@ -79,7 +79,7 @@ function Politica() {
 					marginBottom: "10px",
 				}}
 			>
-				Contact To contact us please use email: 31.distrito@gmail.com
+				Contact To contact us please use email: info@peralstudio.com
 			</p>
 		</div>
 	);
