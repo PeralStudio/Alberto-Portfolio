@@ -5,6 +5,7 @@ import VSCode from "../components/VSCode";
 import Resume from "../components/Resume";
 import Git from "../components/Git";
 import Projects from "../components/Projects";
+import Politica from "../components/Politica";
 
 const Routes = () => {
 	return (
@@ -15,6 +16,7 @@ const Routes = () => {
 				<Route path="/resume" exact component={Resume} />
 				<Route path="/git" exact component={Git} />
 				<Route path="/projects" exact component={Projects} />
+				<Route path="/projects" exact component={Politica} />
 			</Switch>
 		</Router>
 	);
